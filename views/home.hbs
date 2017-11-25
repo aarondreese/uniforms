@@ -1,17 +1,122 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf8">
+    {{> css}}
+    <style>
+        .stock-card.mdl-card{
+            width:95%;
+            min-width: 100px;
+            min-height:250px;
+            background-color: rgba(67, 27, 211, 0.857);
+            
+        }
+    </style>
 </head>
-
 <body>
-    {{> header}}
-    <h2>{{welcomeMessage}}</h2>
-    
-    {{> footer}}
+<div class="mdl-layout mdl-js-layout">
+    <header class="mdl-layout__header">
+        <div class="mdl-layout-icon"></div>
+        <div class="mdl-layout__header-row">
+            <span>  2nd Hand Uniform Club </span>
+            <div class="mdl-layout-spacer"></div>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="#"> First Link</a>
+                <a class="mdl-navigation__link" href="#"> Second Link</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="mdl-layout__drawer">
+        <span class="mdl-layout__title">Pull out Menu</span>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="#"> First Link</a>
+            <a class="mdl-navigation__link" href="#"> Second Link</a>
+        </nav>
+    </div> <!-- end of navigation -->
+
+    <main class="mdl-layout__content">
+        <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--4-col"></div>
+                <div class="mdl-cell mdl-cell--4-col">
+                    <h3>
+                        Sign up or Sign in
+                    </h3>  (don't worry, we will work it out - thats our job)
+                </div>
+                <div class="mdl-cell mdl-cell--4-col"></div>
+                <div class="mdl-cell mdl-cell--4-col"></div>
+                <div class="mdl-cell mdl-cell--4-col">
+                    <form action=#>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input  
+                                    class="mdl-textfield__input" 
+                                    type="email" 
+                                    
+                                    name="email"
+                                    id="email"/>
+                            <label 
+                                    class="mdl-textfield__label"
+                                    for="email">Email</label>
+                            <span class="mdl-textfield__error">not a valid email address</span>        
+                            
+                        </div>
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" >Go!</button>
+                    </form>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col"></div>
+            <!-- third row -->
+            <div class="mdl-cell mdl-cell--2-col">
+                <div class="stock-card mdl-card mdl-shadow--4dp mdl-card--border"> <!-- sart of card -->
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">Boys Sweatshirts</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        Boys Sweatshirts with St. Geroges logo size 7-8
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        7 in stock
+                    </div>
+                    <div>
+                    </div>
+                </div><!-- end of card -->
+            </div>
+            <div class="mdl-cell mdl-cell--2-col">
+                <div class="stock-card mdl-card mdl-shadow--4dp mdl-card--border"> <!-- sart of card -->
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">Girls Cardigans</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        3 button cardigan with St. Geroges logo size 7-8
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        7 in stock
+                    </div>
+                    <div>
+                    </div>
+                </div><!-- end of card -->
+            </div>        
+            <div class="mdl-cell mdl-cell--2-col">
+                {{> stockcard category="Boys Sweats" description="navy sweatshirt with logo Age 7-8" qty=9}}
+            </div>
+            <div class="mdl-cell mdl-cell--2-col">
+                {{> stockcard category="Girls Cardigans" description="3 button cardigan with logo age 7-8" qty=11}}
+            </div>
+            <div class="mdl-cell mdl-cell--2-col">
+                {{> stockcard category="Red Polo Shirt" description="With new logo" qty=3}}
+            </div>
+            <div class="mdl-cell mdl-cell--2-col">
+                {{> stockcard category="Gym Skirt" description="Navy Blue size10-11" qty=3 needstock=true}}
+            </div>
+        </div> <!-- end of grid -->
+
+
+       
+
+        
+    </main>
+</div> <!-- end outer container -->
+
+
+
 </body>
-
-
-
 </html>

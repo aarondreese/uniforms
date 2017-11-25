@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf8">
+     {{> css}}
+    <style>
+        .stock-card.mdl-card{
+            width:95%;
+            min-width: 100px;
+            min-height:250px;
+            background-color: rgba(67, 27, 211, 0.857);
+        }
+    </style>
+</head>
+
+<body>
+   
+    
+   
+<div class="mdl-layout mdl-js-layout">
+    <header class="mdl-layout__header">
+        <div class="mdl-layout-icon"></div>
+        <div class="mdl-layout__header-row">
+            <span>  2nd Hand Uniform Club </span>
+            <div class="mdl-layout-spacer"></div>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="#"> First Link</a>
+                <a class="mdl-navigation__link" href="#"> Second Link</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="mdl-layout__drawer">
+        <span class="mdl-layout__title">Pull out Menu</span>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="#"> First Link</a>
+            <a class="mdl-navigation__link" href="#"> Second Link</a>
+        </nav>
+    </div> <!-- end of navigation -->
+
+    <ul>
+        {{#each contacts as |c|}}
+            <li>{{c.EmailAddress}}</li>
+        {{/each}}
+    </ul>
+
+    <main class="mdl-layout__content">
+    there are  {{categories.length}} categories<form method="post">
+        <label for "category">New Category</label>
+        <input name="category" maxlength="100" id ="category">
+        <button >Submit</button>
+    </form>
+
+        <div class="mdl-grid">
+           
+            {{#each  categories as |cat|}}
+                <div class="mdl-cell mdl-cell--2-col">
+                    {{> stockcard category=cat.Name description=cat.Description qty=cat.Qty needstock = cat.NeedStock}}
+                </div>
+            {{/each}}
+        </div> <!-- end of grid -->
+
+
+       
+
+        
+    </main>
+</div> <!-- end outer container -->
+
+    
+    {{> footer}}
+</body>
+
+
+
+</html>

@@ -1,0 +1,18 @@
+<div class="stock-card mdl-card mdl-shadow--4dp mdl-card--border"> <!-- sart of card -->
+    <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text">{{category}}</h2>
+    </div>
+    <div class="mdl-card__supporting-text">
+        {{description}}
+    </div>
+    <div class="mdl-card__supporting-text">
+        {{qty}} in stock
+    </div>
+    <div>
+        {{#if needstock}}
+            <span class="mdl-chip">
+                <span class="mdl-chip__text">Donations Accepted</span>
+            </span>
+        {{/if}}
+    </div>
+</div><!-- end of card -->

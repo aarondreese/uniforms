@@ -1,0 +1,41 @@
+{
+    "categories": [{
+            "id": 1,
+            "name": "Boys jumpers"
+        },
+        {
+            "id": 2,
+            "name": "Polo Shirts"
+        }, {
+            "id": 3,
+            "name": "Girls Cardigans"
+        },
+        {
+            "id": 4,
+            "name": "Summer Dresses"
+        }
+    ],
+    "contacts": [{
+            "name": "Aaron Reese",
+            "email": "aaron.reese@lineone.net",
+            "phone": "07984342445"
+        },
+        {
+            "name": "Joe Bloggs",
+            "email": "Joe99@lineone.net",
+            "phone": "07770 312478"
+        },
+        {
+            "name": "Kim Smith",
+            "email": "KimsdaOne@lineone.net",
+            "phone": "0798474512"
+        },
+        {
+            "name": "David Jones",
+            "email": "DickkyJ@lineone.net",
+            "phone": "079745689"
+        }
+
+    ]
+
+}
