@@ -1,3 +1,42 @@
+function login(email) {
+    return new Promise(function(resolve, reject) {
+        var query = require('../services/dbConnect').q;
+        query(`SELECT * FROM Contacts WHERE EmailAddress = '${email}'`)
+            .then(data => {
+                console.log('got data in X:', data);
+                if (data.length == 0) {
+                    /* the email does not exist*/
+                    data.isRegistered = false;
+                    data.email = email;
+                } else {
+                    data.isRegistered = true;
+                }
+                resolve(data)
+            })
+            .catch(err => {
+                reject(err)
+            })
+    })
+}
+
+
+function register(newContact) {
+    // TODO: validate new contact data
+    return new Promise(function(resolve, reject) {
+        var query = require('../services/dbConnect').q;
+        var SQL = `INSERT INTO Contacts (EmailAddress,MobileNumber,FirstName,LastName,isActive) VALUES (
+            '${newContact.EmailAddress}',
+            '${newContact.MobileNumber}',
+            '${newContact.FirstName}',
+            '${newContact.LastName}',
+           1)`;
+        console.log(SQL);
+        query(SQL)
+            .then(data => resolve(data))
+            .catch(err => reject(err))
+    })
+}
+
 function getContacts(callback) {
     var queryDB = require('../services/dbConnect').queryDB;
     var query = 'SELECT * FROM Contacts';
@@ -35,5 +74,7 @@ function getContact(ID, callback) {
 
 module.exports = {
     getContacts,
-    getContact
+    getContact,
+    login,
+    register
 }

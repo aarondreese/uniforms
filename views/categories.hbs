@@ -39,24 +39,25 @@
         </nav>
     </div> <!-- end of navigation -->
 
-    <ul>
+    {{!-- <ul>
         {{#each contacts as |c|}}
             <li>{{c.EmailAddress}}</li>
         {{/each}}
-    </ul>
+    </ul> --}}
 
     <main class="mdl-layout__content">
-    there are  {{categories.length}} categories<form method="post">
+    there are  {{categories.length}} categories
+    {{!-- <form method="get" action="categories/add">
         <label for "category">New Category</label>
         <input name="category" maxlength="100" id ="category">
         <button >Submit</button>
-    </form>
+    </form> --}}
 
         <div class="mdl-grid">
            
             {{#each  categories as |cat|}}
                 <div class="mdl-cell mdl-cell--2-col">
-                    {{> stockcard category=cat.Name description=cat.Description qty=cat.Qty needstock = cat.NeedStock}}
+                    {{> stockcard category=cat.Name description=cat.Description qty=cat.Qty needstock = cat.needStock}}
                 </div>
             {{/each}}
         </div> <!-- end of grid -->
